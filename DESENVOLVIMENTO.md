@@ -30,7 +30,7 @@ Sobre o histórico de commits: o primeiro commit foi feito logo no começo (estr
 
 ## Ferramentas de IA utilizadas
 
-Usei o **Claude** (Anthropic) pelo chat do claude.ai. Modelo: **[CONFIRMAR: modelo(s) usado(s)]**.
+Usei o **Claude**.
 
 Não usei outras ferramentas de IA. Também usei VS Code, Git, Docker Desktop e PowerShell.
 
@@ -63,8 +63,8 @@ Alguns exemplos de pedidos e do que fiz com as respostas:
 
 - **Testes automatizados (9):** 4 de validação do cadastro (nome e e-mail obrigatórios, formato do e-mail) e 5 da lógica de extração (nome, e-mail e telefone, telefone fixo, nada encontrado e reconhecimento de PDF). Passaram. O Windows bloqueou a execução do `dotnet test` no meu computador, por uma política de controle de aplicativo, então rodei os testes dentro de um contêiner Docker. O comando está no README.
 - **Teste manual da leitura com um PDF de verdade:** enviei `exemplos/curriculo-ficticio.pdf` ao endpoint com `curl` e recebi nome, e-mail e telefone corretos. Os testes automatizados cobrem a lógica em cima de texto, mas não abrem um PDF real, e foi esse teste manual que cobriu a leitura.
-- **Casos de erro da leitura (arquivo que não é PDF, PDF corrompido, arquivo acima de 5 MB, requisição sem arquivo):** **[CONFIRMAR: se testei cada um e quais mensagens apareceram]**.
-- **Frontend no navegador:** **[CONFIRMAR: marquei como testados: salvar vazio, e-mail inválido, cadastro manual, lista, detalhes, PDF, arquivo inválido e backend desligado]**. O frontend não tem testes automatizados.
+- **Casos de erro da leitura (arquivo que não é PDF, PDF corrompido, arquivo acima de 5 MB, requisição sem arquivo)**.
+- **Frontend no navegador: ** salvar vazio, e-mail inválido, cadastro manual, lista, detalhes, PDF, arquivo inválido e backend desligado**. O frontend não tem testes automatizados.
 - **Histórico do Git:** busquei a palavra `Password` no histórico do arquivo de configuração antes de publicar e não encontrei nada.
 - **Teste do zero em uma máquina virtual:** criei uma máquina virtual Windows limpa, sem nada do projeto, e segui o README para rodar tudo do começo. Instalei os pré-requisitos, incluindo o **SQL Server Express** (instalação Básica, sem Docker), cloneei o repositório do GitHub, criei o `appsettings.Development.json` com a conexão do Express (autenticação do Windows), rodei o backend (porta 5195) e o frontend, e usei a aplicação no navegador. Funcionou. O backend criou o banco e a tabela sozinho. Esse teste também achou dois problemas no README, descritos na seção seguinte.
 
